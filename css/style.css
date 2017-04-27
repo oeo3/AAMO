@@ -1,0 +1,70 @@
+/*--Fonts--*/
+@import url('https://fonts.googleapis.com/css?family=Century Gothic');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+/*--reset style--*/
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+/*--Welcome Page--*/
+.intro{
+    min-height: 100%;
+    width: 100%;
+    margin: auto;
+    background: url("../img/background_images/welcomebackground.jpg") no-repeat 50% 70%;
+    display: table;
+    top: 0;
+    background-size: cover;
+}
+
+.intro .inner{
+    display: table-cell;
+    padding-top: 15%; 
+    width: 100%;
+    max-width: none;
+}
+
+.intro_content{
+    max-width: 550px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.intro_content h1{
+    font-family: 'Century Gothic', sans-serif;
+    color: #dfc12a;
+    text-shadow: 0px 0px 300px #000;
+    font-size: 200%;
+    padding-left: 8%;
+}
+
+.inner .enter_button{
+    border-radius: 9px;
+    font-family: 'Oswald', sans-serif;
+    color: #000;
+    font-size: 135%;
+    padding: 10px 20px;
+    border: solid #000 3px; 
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.enter_button:hover{
+    color: #dfc12a;
+    border: solid #dfc12a 3px;
+}
+
+@media screen and (max-width:768px){
+    .intro_content h1{
+        font-size: 200%;
+        padding: 0% 30%;
+    }
+    .enter_button{
+        font-size: 110%;
+        padding: 7px 15px;
+    }
+}
