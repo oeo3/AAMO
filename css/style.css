@@ -58,6 +58,29 @@ html, body{
     border: solid #dfc12a 3px;
 }
 
+#welcome_socialmedia{
+    padding: 30px;
+}
+
+.facebook{
+    border: solid #dfc12a 3px;
+    border-radius: 7px;
+    border-spacing: 50px;
+}
+
+.facebook:hover{
+     border: solid #000 3px;
+}
+.instagram{
+    border: solid #dfc12a 3px;
+    border-radius: 7px;
+    border-spacing: 50px;
+}
+
+.instagram:hover{
+     border: solid #000 3px;
+}
+
 @media screen and (max-width:768px){
     .intro_content h1{
         font-size: 200%;
@@ -66,5 +89,8 @@ html, body{
     .enter_button{
         font-size: 110%;
         padding: 7px 15px;
+    }
+    #welcome_socialmedia{
+        padding: 30px;
     }
 }
