@@ -94,3 +94,204 @@ html, body{
         padding: 30px;
     }
 }
+
+/*--home--*/
+#home {
+    background-color: black;
+}
+#homeSlide {
+    height: 100vh;
+    width: 100%;
+    display: table;
+    top: 0px;
+    margin: auto;
+    background: url(../img/home_slideshow/workman.jpg) 50% 70% no-repeat;
+    background-size: cover;
+    margin-bottom:0;
+    padding-top:0;
+    background-color: black;
+    position:fixed;
+    z-index:1;
+}
+
+/*--Navigation Bar--*/
+
+#logo {
+    display: inline-block;
+    position: fixed;
+    top: 100px;
+    height: 70px;
+    margin-top: 0px;
+    padding-top: 0px;
+    padding-left: 85px;
+    vertical-align: middle;
+    margin-bottom:0;
+    padding-top:0;
+    z-index:3;
+}
+
+#navbar_right {
+    position: fixed;
+    right: 21px;
+    top: 20px;
+    font-size: 20px;
+    letter-spacing: 0.4px;
+    background: white;
+    opacity:0.75;
+    font-family: Oswald, sans-serif;
+    margin-bottom:0;
+    padding-top:0;
+    z-index:3;
+}
+
+#navbar_right ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+#navbar_right li {
+    display: inline-block;
+    text-align: center;
+    padding: 7px 12px;
+}
+
+#navbar_right a {
+    color: rgb(0, 0, 0);
+    font-size: 1em;
+    text-decoration: none;
+}
+
+#navbar_right a:hover{
+    color: #dfc12a;
+    cursor: pointer;
+}
+
+#navbar_right a.active{
+    color: #dfc12a;
+}
+
+/*--home content--*/
+#homecontent{
+    top:100vh;
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    color:#dfc12a;
+    margin-top:0;
+    padding-top:0;
+    position:absolute;
+    z-index:2;
+}
+
+/*--home right categories--*/
+#home_right {
+    text-align: left;
+    width:40%;
+    margin-top:0;
+    padding-top:0;
+    font-family: Oswald, sans-serif;
+    font-size: 35px;
+}
+#home_right ul {
+    padding-left: 30px;
+    margin-left: 30px;
+}
+
+#home_right li {
+    list-style-type:none;
+    margin-left:30px;
+    text-align: left;
+    padding: 2px 12px;
+}
+
+#home_right a {
+    color: #dfc12a;
+    font-size: 1em;
+    text-decoration: none;
+}
+
+#home_right a:hover{
+    color:white;
+}
+
+#home_right a.active{
+    color:white;
+}
+
+/*--footer--*/
+#footer {
+    position: absolute;
+    top:193vh;
+    right: 21px;
+    font-size: 20px;
+    letter-spacing: 0.4px;
+    background: white;
+    opacity:0.75;
+    font-family: Oswald, sans-serif;
+    margin:0;
+    padding:0;
+    z-index:2;
+    
+}
+
+#footer ul {
+    padding: 0px;
+    margin: 0px; 
+}
+
+#footer li {
+    display: inline-block;
+    text-align: center;
+    padding: 7px 12px;
+}
+
+#footer a {
+    color: rgb(0, 0, 0);
+    font-size: 1em;
+    text-decoration: none;
+}
+
+#footer a:hover{
+    color: #dfc12a;
+}
+
+#footer a.active{
+    color: #dfc12a;
+}
+
+
+/*--login modal--*/
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 72.5%;
+    top: 10%;
+    width: 20%; /* Full width */
+    height: 15%; /* Full height */
+    background-color: #fefefe;
+    padding-top: 20px;
+    border: solid #dfc12a 4px;
+    border-radius: 9px;
+}
+
+/* close Button */
+.close {
+    position: absolute;
+    right: 5px;
+    top:0;
+    margin:0;
+    padding:0;
+    color: black;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.forgotpsw {
+    font-size:15px;
+}
