@@ -322,7 +322,7 @@ html, body{
     top: 0px;
     margin: auto;
     background-color: #dfc12a;
-    background: url(../img/background_images/gold.jpeg) 50% 70% no-repeat;
+    background: url(../img/background_images/gold.jpeg) 50% 70% no-repeat; /*Source = https://www.freecreatives.com/backgrounds/gold-background.html*/
     background-size: cover;
     margin-bottom:0;
     padding-top:0;
