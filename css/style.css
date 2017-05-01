@@ -10,7 +10,7 @@ html, body{
     width: 100%;
 }
 
-/*--Welcome Page--*/
+/*----------Welcome Page----------*/
 .intro{
     min-height: 100%;
     width: 100%;
@@ -94,7 +94,6 @@ html, body{
         padding: 30px;
     }
 }
-
 /*--home--*/
 #home {
     background-color: black;
@@ -183,8 +182,8 @@ html, body{
     z-index:2;
 }
 
-/*--home right categories--*/
-#home_right {
+/*--home left categories--*/
+#home_left {
     text-align: left;
     width:40%;
     margin-top:0;
@@ -192,33 +191,257 @@ html, body{
     font-family: Oswald, sans-serif;
     font-size: 35px;
 }
-#home_right ul {
+#home_left ul {
     padding-left: 30px;
     margin-left: 30px;
 }
 
-#home_right li {
+#home_left li {
     list-style-type:none;
     margin-left:30px;
     text-align: left;
     padding: 2px 12px;
 }
 
-#home_right a {
+#home_left a {
     color: #dfc12a;
     font-size: 1em;
     text-decoration: none;
 }
 
-#home_right a:hover{
+#home_left a:hover{
     color:white;
 }
 
-#home_right a.active{
+#home_left a.active{
     color:white;
 }
+/*--Scroll Arrows on Home Page--*/
+#scroll_home a{
+    position: absolute;
+	bottom: 1px;
+	left: 48%;
+	z-index: 2;
+	display: inline-block;
+	transform: translate(0, -10%);
+	color: #fff;
+	font : normal 400 20px/1 'Century Gothic', sans-serif;
+	letter-spacing: .1em;
+	text-decoration: none;
+	transition: opacity .3s;
+}
 
-/*--footer--*/
+#scroll_home a:hover {
+	opacity: .5;
+}
+
+
+#home_right a{
+    position: absolute;
+	bottom: 1px;
+	left: 48%;
+	z-index: 2;
+	display: inline-block;
+	transform: translate(0, -10%);
+	color: #fff;
+	font : normal 400 20px/1 'Century Gothic', sans-serif;
+	letter-spacing: .1em;
+	text-decoration: none;
+	transition: opacity .3s;
+}
+
+#home_right a:hover {
+	opacity: .5;
+}
+/*-Scroll Down-*/
+#scroll_home a {
+	padding-top: 50px;
+}
+#scroll_home a span {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 46px;
+	height: 46px;
+	margin-left: -23px;
+	border: 1px solid #fff;
+	border-radius: 100%;
+	box-sizing: border-box;
+}
+#scroll_home a span::after {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	content: '';
+	width: 16px;
+	height: 16px;
+	margin: -12px 0 0 -8px;
+	border-left: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	box-sizing: border-box;
+}
+
+/*-Scroll Up-*/
+#home_right a {
+	padding-top: 50px;
+}
+#home_right a span {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 46px;
+	height: 46px;
+	margin-left: -23px;
+	border: 1px solid #fff;
+	border-radius: 100%;
+	box-sizing: border-box;
+}
+#home_right a span::after {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	content: '';
+	width: 16px;
+	height: 16px;
+	margin: -5px 0 0 -8px;
+	border-left: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+	-webkit-transform: rotate(135deg);
+	transform: rotate(135deg);
+	box-sizing: border-box;
+}
+
+/*------------------About Page------------------*/
+
+#company {
+    height: 100vh;
+    width: 100%;
+    display: table;
+    top: 0px;
+    margin: auto;
+    background-color: #dfc12a;
+    background: url(../img/background_images/gold.jpeg) 50% 70% no-repeat;
+    background-size: cover;
+    margin-bottom:0;
+    padding-top:0;
+    position:fixed;
+    z-index:1;
+}
+#founder{
+    top:100vh;
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    color:#dfc12a;
+    margin-top:0;
+    padding-top:0;
+    position:absolute;
+    z-index:2;
+}
+
+#about-content h1{
+    font-family: 'Century Gothic', sans-serif;
+    font-size: 380%;
+    padding-top: 15%;
+    text-align: center;
+}
+
+#about-content #company p{
+    text-align: center;
+    padding: 0 10%;
+    font-size: 20px;
+    
+}
+
+#about-content #founder p{
+    text-align: center;
+    padding: 0 10%;
+    font-size: 20px;
+    color: #fff;
+}
+
+/*--Scroll Arrows on About Page--*/
+#about-content a{
+    position: absolute;
+	bottom: 1px;
+	left: 48%;
+	z-index: 2;
+	display: inline-block;
+	transform: translate(0, -10%);
+	color: #fff;
+	font : normal 400 20px/1 'Century Gothic', sans-serif;
+	letter-spacing: .1em;
+	text-decoration: none;
+	transition: opacity .3s;
+}
+
+#about-content a:hover {
+	opacity: .5;
+}
+/*-Scroll Down-*/
+#company a {
+	padding-top: 50px;
+}
+#company a span {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 46px;
+	height: 46px;
+	margin-left: -23px;
+	border: 1px solid #fff;
+	border-radius: 100%;
+	box-sizing: border-box;
+}
+#company a span::after {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	content: '';
+	width: 16px;
+	height: 16px;
+	margin: -12px 0 0 -8px;
+	border-left: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	box-sizing: border-box;
+}
+/*-Scroll Up-*/
+#founder a {
+	padding-top: 50px;
+}
+#founder a span {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 46px;
+	height: 46px;
+	margin-left: -23px;
+	border: 1px solid #fff;
+	border-radius: 100%;
+	box-sizing: border-box;
+}
+#founder a span::after {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	content: '';
+	width: 16px;
+	height: 16px;
+	margin: -5px 0 0 -8px;
+	border-left: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+	-webkit-transform: rotate(135deg);
+	transform: rotate(135deg);
+	box-sizing: border-box;
+}
+
+
+
+/*----------------Footer----------------*/
 #footer {
     position: absolute;
     top:193vh;
@@ -242,7 +465,7 @@ html, body{
 #footer li {
     display: inline-block;
     text-align: center;
-    padding: 7px 12px;
+    padding: 7px 5px;
 }
 
 #footer a {
@@ -258,7 +481,11 @@ html, body{
 #footer a.active{
     color: #dfc12a;
 }
-
+#footer img{
+    width: 60%;
+    height 70%;
+    display: inline-block;
+}
 
 /*--login modal--*/
 .modal {
