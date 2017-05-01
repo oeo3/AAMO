@@ -387,7 +387,7 @@ html, body{
 #company a span {
 	position: absolute;
 	top: 0;
-	left: 50%;
+	left: 45%;
 	width: 46px;
 	height: 46px;
 	margin-left: -23px;
@@ -416,7 +416,7 @@ html, body{
 #founder a span {
 	position: absolute;
 	top: 0;
-	left: 50%;
+	left: 45%;
 	width: 46px;
 	height: 46px;
 	margin-left: -23px;
