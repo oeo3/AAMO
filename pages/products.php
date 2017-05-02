@@ -10,12 +10,12 @@
         <section id="products">
             <!--nav-->
             <div id="navbar_left">
-                <a href="home.html"><img id="logo" src="../img/header/graphic.jpg"></a>
+                <a href="home.php"><img id="logo" src="../img/header/graphic.jpg"></a>
             </div>
             <div id="navbar_right">
                 <ul>
-                    <li><a id="aboutButton" href="about.html">ABOUT</a></li>
-                    <li><a id="productsButton" href="products.html">PRODUCTS</a></li>
+                    <li><a id="aboutButton" href="about.php">ABOUT</a></li>
+                    <li><a id="productsButton" href="products.php">PRODUCTS</a></li>
                     <li> <a onclick="document.getElementById('loginclick').style.display='block'">LOGIN</a>
                         <!-- The Modal -->
                         <div id="loginclick" class="modal">
@@ -41,38 +41,47 @@
                     <li>FAV</li>
                 </ul>
             </div>
-
-<div id="main_text">
-                    <form  id= "contactform" name="contactform" action="includes/contactform.php" method="POST">
-                        <div class="row">
-                            <label id="submitterName"><b>Name   </b></label> <br />
-                            <input id="name" class="input" name="name" type="text" value="" size="30" /><br />
-                            <label id="submitterEmail"><b>Email   </b></label><br />
-                            <input id="email" class="input" name="email" type="text" value="" size="30" /><br />
-                        </div>
-                        <div class="row">
-                            <label id="submitterMessage"><b>Message    </b></label><br />
-                            <textarea id="message" class="input" name="message" rows="7" cols="30"></textarea><br />
-                        </div>
-                        <input id="submit_button" type="submit" value="Send email" />
-                    </form>
-                </div>
-
-                <?php 
-                    $reasons = array("wrong" => "You have left one or more fields blank.", "errorEmail" => "The name or email address you entered is not valid.", "errorComments" => "The message you entered is not valid."); 
-                    if (isset($_GET["loginFailed"])) echo $reasons[$_GET["reason"]];
-                    if (isset($_GET["loginSuccess"])){
-                        echo "Thank you! Your email has been sent. I will get back to you shortly";
-                    };
-                        
-                ?>
+            <div id="product_menu">
+                <h1>Categories</h1>
+                <ul>
+                    <li><a id="cat_jewel"> JEWELERY</a></li>
+                    <li><a id="cat_wood">WOOD WORK</a></li>
+                    <li><a id="cat_textiles">TEXTILES</a></li>
+                </ul>
+                <!--Note: category items: on click, sql code will search the database under the product in album table and show items which have the same value as the clicked filter-->
+                <h2>Filters</h2>
+                <ul class="filters">
+                    <script type="text/javascript">
+                        $(document).ready(function(){
+                           $(".filters").click(function(){
+                              $(".filters ul").slideDown(); 
+                               //write code to slide content back up: if content is showing under ".filters ul", when ".filters ul" is clicked, sub content disappears. 
+                                //if($(this).prev().is(".visible")){$(this).prev().slideUp();}
+                           }); 
+                        });
+                    </script>
+                    <li><a href="#" >Series<span class="sub_arrow"></span></a>
+                        <ul class="filter_sub">
+                           <li><a href="#">Garima</a></li>
+                            <li><a href="#">Lo</a></li>
+                            <li><a href="#">Shakti</a></li>
+                        </ul>
+                    </li>
+                    <!--Note: sub menu items in the filter section: on click, sql code will search the database under the product table and show items which have the same value as the clicked filter-->
+                    
+                    <li><a href="#">Material</a></li>
+                </ul>
+            </div>
+            
+            <div id="product_items">
+            </div>
             
             <!--footer-->
             <div id="footer">
           	<ul>
                 <li><a href="https://www.facebook.com/AAMObyAayushaShrestha/" target="_blank" ><img src="../img/socialmediaicon/facebookblack.png" onmouseover="this.src='../img/socialmediaicon/facebookgold.png'" onmouseout="this.src='../img/socialmediaicon/facebookblack.png'"></a></li>
                 <li><a href="https://www.instagram.com/aamo_nepal/?hl=en" target="_blank"><img src="../img/socialmediaicon/instablack.png" onmouseover="this.src='../img/socialmediaicon/instagold.png'" onmouseout="this.src='../img/socialmediaicon/instablack.png'"></a></li>
-         		<li><a id="contactButton" href="contact.html">CONTACT US</a></li>
+         		<li><a id="contactButton" href="contact.php">CONTACT US</a></li>
             </ul> 
             </div>
         </section>
