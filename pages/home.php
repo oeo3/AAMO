@@ -41,12 +41,12 @@ session_start();
     	        });
             </script>
         <div id="navbar_left">
-            <a href="home.html"><img id="logo" src="../img/header/graphic.jpg"></a>
+            <a href="home.php"><img id="logo" src="../img/header/graphic.jpg"></a>
         </div>
         <div id="navbar_right">
             <ul>
-                <li><a id="aboutButton" href="about.html">ABOUT</a></li>
-                <li><a id="productsButton" href="products.html">PRODUCTS</a></li>
+                <li><a id="aboutButton" href="about.php">ABOUT</a></li>
+                <li><a id="productsButton" href="products.php">PRODUCTS</a></li>
                 <li> <a onclick="document.getElementById('loginclick').style.display='block'">LOGIN</a>
                     <!-- The Modal -->
                     <div id="loginclick" class="modal">
@@ -105,12 +105,16 @@ session_start();
                     <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
                     <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
                     <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
-                    <li><a id="cat_jewel" href="products.html"> JEWELERY</a></li>
-                    <li><a id="cat_wood" href="products.html">WOOD WORK</a></li>
-                    <li><a id="cat_textiles" href="products.html">TEXTILES</a></li>
+                    <li><a id="cat_jewel" href="products.php"> JEWELERY</a></li>
+                    <li><a id="cat_wood" href="products.php">WOOD WORK</a></li>
+                    <li><a id="cat_textiles" href="products.php">TEXTILES</a></li>
                 </ul>
             </div>
         <div id="home_right">
+            <!--Pseudocode to display google calendar: -->
+            <iframe src="https://calendar.google.com/calendar/embed?src=oeo3%40cornell.edu&ctz=America/New_York" style="border: 0" frameborder="0" scrolling="no"></iframe>
+            
+            <!--scroll arrow-->
             <script type="text/javascript">
                             $(function(){
                                 $('a[href*=#homeSlide]').on('click', function(e) {
@@ -126,7 +130,7 @@ session_start();
           	<ul>
                 <li><a href="https://www.facebook.com/AAMObyAayushaShrestha/" target="_blank" ><img src="../img/socialmediaicon/facebookblack.png" onmouseover="this.src='../img/socialmediaicon/facebookgold.png'" onmouseout="this.src='../img/socialmediaicon/facebookblack.png'"></a></li>
                 <li><a href="https://www.instagram.com/aamo_nepal/?hl=en" target="_blank"><img src="../img/socialmediaicon/instablack.png" onmouseover="this.src='../img/socialmediaicon/instagold.png'" onmouseout="this.src='../img/socialmediaicon/instablack.png'"></a></li>
-         		<li><a id="contactButton" href="contact.html">CONTACT US</a></li>
+         		<li><a id="contactButton" href="contact.php">CONTACT US</a></li>
             </ul> 
         </div>
     </section>

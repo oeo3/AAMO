@@ -9,12 +9,12 @@
     <body>
         <section id="about">
             <div id="navbar_left">
-                <a href="home.html"><img id="logo" src="../img/header/graphic.jpg"></a>
+                <a href="home.php"><img id="logo" src="../img/header/graphic.jpg"></a>
             </div>
             <div id="navbar_right">
                 <ul>
-                    <li><a id="aboutButton" href="about.html">ABOUT</a></li>
-                    <li><a id="productsButton" href="products.html">PRODUCTS</a></li>
+                    <li><a id="aboutButton" href="about.php">ABOUT</a></li>
+                    <li><a id="productsButton" href="products.php">PRODUCTS</a></li>
                     <li> <a onclick="document.getElementById('loginclick').style.display='block'">LOGIN</a>
                         <!-- The Modal -->
                         <div id="loginclick" class="modal">
@@ -87,7 +87,7 @@ that will allow traditional practices to be successfully passed down to the futu
                 <ul>
                     <li><a href="https://www.facebook.com/AAMObyAayushaShrestha/" target="_blank" ><img src="../img/socialmediaicon/facebookblack.png" onmouseover="this.src='../img/socialmediaicon/facebookgold.png'" onmouseout="this.src='../img/socialmediaicon/facebookblack.png'"></a></li>
                     <li><a href="https://www.instagram.com/aamo_nepal/?hl=en" target="_blank"><img src="../img/socialmediaicon/instablack.png" onmouseover="this.src='../img/socialmediaicon/instagold.png'" onmouseout="this.src='../img/socialmediaicon/instablack.png'"></a></li>
-                    <li><a id="contactButton" href="contact.html">CONTACT US</a></li>
+                    <li><a id="contactButton" href="contact.php">CONTACT US</a></li>
                 </ul>
             </div>
         </section>
