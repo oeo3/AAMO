@@ -216,6 +216,20 @@ html, body{
 #home_left a.active{
     color:white;
 }
+
+/*--home right--*/
+#home_right {
+    float: right;
+    width:60%;
+    margin-top:-250px;
+    padding-top:0;
+    font-family: Oswald, sans-serif;
+    font-size: 35px;
+}
+#home_right iframe{
+    width: 500px;
+    height: 400px;
+}
 /*--Scroll Arrows on Home Page--*/
 #scroll_home a{
     position: absolute;
