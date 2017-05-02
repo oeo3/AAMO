@@ -79,10 +79,10 @@ session_start();
                                 if ($valid_password && $username === $row['username']) {
                                     $_SESSION['logged_user'] = $username;
                                     header("Refresh:0");
-                                    console.log(yay, logged in);
+                                    console.log("yay, logged in");
                                 } 
                                 else {
-                                    console.log(log in failed);
+                                    console.log("log in failed");
                                 }   
                             }
                         ?>
