@@ -527,6 +527,12 @@ html, body{
     -webkit-transform: rotate(90deg)
     transform: rotate(90deg);
 }
+/*----------------Contact Form----------------*/
+#contactform {
+    margin-top: 200px;
+    margin-left: 40%;
+    color: white;
+}
 /*----------------Footer----------------*/
 #footer {
     position: fixed;
