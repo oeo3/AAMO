@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en-US">
 	<head>
@@ -49,14 +52,41 @@
                     <div id="loginclick" class="modal">
                     <div onclick="document.getElementById('loginclick').style.display='none'" class="close">&times;</div>
                     <!-- Modal Content -->
-                        <form class="loginform" action="login.php">
+                        <form class="loginform" action="login.php" method="post">
                             <label><b>Username</b></label>
                             <input type="text" placeholder="Enter Username" name="username" required>
                             <label><b>Password</b></label>
                             <input type="password" placeholder="Enter Password" name="psw" required>
-                            <button type="submit">Login</button>
+                            <input type="submit" name="submitLogin" value="Login">
                             <span class="forgotpsw"><a href="#"> Forgot password?</a></span>
                         </form>
+
+                        <?php
+                            require_once 'config.php';
+                            $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+
+                            if (isset($_POST['submitLogin'])) {
+                                $username = htmlentities($_POST['username']);
+                                $psw = htmlentities($_POST['psw']);
+
+                                $result = $mysqli->query("SELECT * from Users WHERE username = '$username'");
+                                $row = $result->fetch_assoc();
+                                $correctp = $row['password'];
+
+                                $valid_password = password_verify("$password", $correctp);        
+                                echo "password_hash( 'mypassword', PASSWORD_DEFAULT)";
+
+                                if ($valid_password && $username === $row['username']) {
+                                    $_SESSION['logged_user'] = $username;
+                                    header("Refresh:0");
+                                    console.log(yay, logged in);
+                                } 
+                                else {
+                                    console.log(log in failed);
+                                }   
+                            }
+                        ?>
+
                     </div> 
                     <script>
 		                var modal = document.getElementById('loginclick');
