@@ -11,6 +11,7 @@ session_start();
     </head>
     <body>
     <section id="home">
+
     	<div id="homeSlide">
             <div id='scroll_home'>
                 <script type="text/javascript">
@@ -18,12 +19,14 @@ session_start();
                             $('a[href*=#homecontent]').on('click', function(e) {
                                 e.preventDefault();
                                 $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 800, 'linear');
+                                $('#scroll_home').hide();
                             });
                         });
                 </script>
-                <a href="#homecontent"><span></span>Scroll</a>
+                <a href="#homecontent"><span></span></a>
             </div>
         </div>
+
     	    <script type="text/javascript">
     	       $(window).load(function() {           
                 var i =0; 
@@ -40,9 +43,13 @@ session_start();
                     }, 5000);            
     	        });
             </script>
-        <div id="navbar_left">
-            <a href="home.php"><img id="logo" src="../img/header/graphic.jpg"></a>
-        </div>
+
+
+        <div id="navbar_container">
+            <div id="navbar_left">
+                <a href="home.php"><img id="logo" src="../img/header/graphic.jpg"></a>
+            </div>
+        <div id="navbar_background"></div>
         <div id="navbar_right">
             <ul>
                 <li><a id="aboutButton" href="about.php">ABOUT</a></li>
@@ -86,8 +93,7 @@ session_start();
                                 }   
                             }
                         ?>
-
-                    </div> 
+                    </div>
                     <script>
 		                var modal = document.getElementById('loginclick');
 		                window.onclick = function(event) {
@@ -95,10 +101,17 @@ session_start();
         	                   modal.style.display = "none";
     	                   }
 		                }
-		            </script></li>
-                <li>FAV</li>
-            </ul>
+		            </script>
+
+                    </li>
+
+                    <li><a href="fav.php">FAV</li>
+                </ul>
+ 
         </div>
+    </div>
+
+
         <div id="homecontent">
     	    <div id="home_left">
                 <ul>
@@ -120,17 +133,22 @@ session_start();
                                 $('a[href*=#homeSlide]').on('click', function(e) {
                                     e.preventDefault();
                                     $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().left}, 1000);
+                                    $('#scroll_home').show();
                                 });
                             });
                         </script>
-                    	<a href="#homeSlide"><span></span>Scroll</a>
+                    	<a href="#homeSlide"><span></span></a>
         </div>  
         </div>
+
         <div id="footer">
           	<ul>
-                <li><a href="https://www.facebook.com/AAMObyAayushaShrestha/" target="_blank" ><img src="../img/socialmediaicon/facebookblack.png" onmouseover="this.src='../img/socialmediaicon/facebookgold.png'" onmouseout="this.src='../img/socialmediaicon/facebookblack.png'"></a></li>
-                <li><a href="https://www.instagram.com/aamo_nepal/?hl=en" target="_blank"><img src="../img/socialmediaicon/instablack.png" onmouseover="this.src='../img/socialmediaicon/instagold.png'" onmouseout="this.src='../img/socialmediaicon/instablack.png'"></a></li>
-         		<li><a id="contactButton" href="contact.php">CONTACT US</a></li>
+                <!-- <li><a href="https://www.facebook.com/AAMObyAayushaShrestha/" target="_blank" ><img src="../img/socialmediaicon/facebookblack.png" onmouseover="this.src='../img/socialmediaicon/facebookgold.png'" onmouseout="this.src='../img/socialmediaicon/facebookblack.png'"></a></li>
+                <li><a href="https://www.instagram.com/aamo_nepal/?hl=en" target="_blank"><img src="../img/socialmediaicon/instablack.png" onmouseover="this.src='../img/socialmediaicon/instagold.png'" onmouseout="this.src='../img/socialmediaicon/instablack.png'"></a></li> -->
+                <li> AAMO by Aayusha Shrestha || Kathmandu, Nepal || +977-9849121844 </li>
+                <li><a href="https://www.facebook.com/AAMObyAayushaShrestha/" target="_blank">FACEBOOK</a></li>
+                <li><a href="https://www.instagram.com/aamo_nepal/?hl=en" target="_blank">INSTAGRAM</a></li>
+         		<li><a id="contactButton" href="contact.php">EMAIL</a></li>
             </ul> 
         </div>
     </section>

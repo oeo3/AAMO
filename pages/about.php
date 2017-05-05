@@ -37,7 +37,7 @@
                                 }
                             }
 		              </script></li>
-                    <li>FAV</li>
+                    <li><a href="fav.php">FAV</a></li>
                 </ul>
             </div>
             
@@ -45,18 +45,18 @@
             <div id="about-content">
                 <div id="company">
                     <h1>COMPANY</h1>
-                    <p>“AAMO is a conceptual jewelry line inspired
-by all that is Kathmandu and beyond. Each piece is purely handcrafted by local master craftsmen, who continue to practice the old ways of making jewelry, which has been passed down from generation to generation.
+                    <p>AAMO is a conceptual jewelry line inspired by all that is Kathmandu and beyond.</p>
 
-However, due of rapid commercialization, it
-has become increasing difficult for small scale artisans to sustain their livelihood. One of the core missions of the brand is to highlight the immense ability of our artisans, while creating a sustainable line of jewelry that blends the contemporary with the traditional.
+                    <p>Each piece is purely handcrafted by local master craftsmen, who continue to practice the old ways of making jewelry, which has been passed down from generation to generation.</p>
 
-AAMO is working to create an environment
-that will allow traditional practices to be successfully passed down to the future generations to see, explore, practice and realize the endless possibilities within our nation.”<br/><br/>
+                    <p>However, due of rapid commercialization, it has become increasing difficult for small scale artisans to sustain their livelihood. </p>
 
-- AAYUSHA SHRESTHA
-(Founder/Designer)
+                    <p>One of the core missions of the brand is to highlight the immense ability of our artisans, while creating a sustainable line of jewelry that blends the contemporary with the traditional.</p>
+
+                    <p>AAMO is working to create an environment that will allow traditional practices to be successfully passed down to the future generations to see, explore, practice and realize the endless possibilities within our nation.<br/><br/>
+
                     </p>
+                    <a href="#founder"><span></span></a>
                     <script type="text/javascript">
                         $(function(){
                             $('a[href*=#founder]').on('click', function(e) {
@@ -65,7 +65,6 @@ that will allow traditional practices to be successfully passed down to the futu
                             });
                         });
                     </script>
-                    <a href="#founder"><span></span>ABOUT THE FOUNDER</a>
                 </div>
                 
                 <div id="founder">
@@ -78,16 +77,19 @@ that will allow traditional practices to be successfully passed down to the futu
                                 });
                             });
                         </script>
-                    	<a href="#company"><span></span>ABOUT THE COMPANY</a>
+                    	<a href="#company"><span></span></a>
                 </div>
             </div>
 
             <!--footer-->
             <div id="footer">
                 <ul>
-                    <li><a href="https://www.facebook.com/AAMObyAayushaShrestha/" target="_blank" ><img src="../img/socialmediaicon/facebookblack.png" onmouseover="this.src='../img/socialmediaicon/facebookgold.png'" onmouseout="this.src='../img/socialmediaicon/facebookblack.png'"></a></li>
-                    <li><a href="https://www.instagram.com/aamo_nepal/?hl=en" target="_blank"><img src="../img/socialmediaicon/instablack.png" onmouseover="this.src='../img/socialmediaicon/instagold.png'" onmouseout="this.src='../img/socialmediaicon/instablack.png'"></a></li>
-                    <li><a id="contactButton" href="contact.php">CONTACT US</a></li>
+                   <!--  <li><a href="https://www.facebook.com/AAMObyAayushaShrestha/" target="_blank" ><img src="../img/socialmediaicon/facebookblack.png" onmouseover="this.src='../img/socialmediaicon/facebookgold.png'" onmouseout="this.src='../img/socialmediaicon/facebookblack.png'"></a></li>
+                    <li><a href="https://www.instagram.com/aamo_nepal/?hl=en" target="_blank"><img src="../img/socialmediaicon/instablack.png" onmouseover="this.src='../img/socialmediaicon/instagold.png'" onmouseout="this.src='../img/socialmediaicon/instablack.png'"></a></li> -->
+                    <li> AAMO by Aayusha Shrestha || Kathmandu, Nepal || +977-9849121844 </li>
+                <li><a href="https://www.facebook.com/AAMObyAayushaShrestha/" target="_blank">FACEBOOK</a></li>
+                <li><a href="https://www.instagram.com/aamo_nepal/?hl=en" target="_blank">INSTAGRAM</a></li>
+                <li><a id="contactButton" href="contact.php">EMAIL</a></li>
                 </ul>
             </div>
         </section>
