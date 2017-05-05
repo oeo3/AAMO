@@ -38,8 +38,9 @@ session_start();
                     image.css('background-size', 'cover');
                     image.fadeIn(1000);
                 });
-                if(i == images.length)
+                if(i == images.length) {
                     i = 0;
+                    }
                     }, 5000);            
     	        });
             </script>
