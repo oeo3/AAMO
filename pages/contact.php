@@ -3,7 +3,7 @@
 	<head>
         <meta charset="UTF-8">
         <title>AAMO</title>
-        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <link rel="stylesheet" type="text/css" href="../css/style2.css">
         <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     </head>
     <body>

@@ -3,7 +3,7 @@
 	<head>
         <meta charset="UTF-8">
         <title>AAMO</title>
-        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <link rel="stylesheet" type="text/css" href="../css/style2.css">
         <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     </head>
     <body>
@@ -38,7 +38,7 @@
                                 }
                             }
 		              </script></li>
-                    <li>FAV</li>
+                    <li><a href="fav.php">FAV</li>
                 </ul>
             </div>
             <div id="productscontent">
@@ -84,13 +84,16 @@
             </div>
             
             <!--footer-->
-            <div id="footer">
-          	<ul>
-                <li><a href="https://www.facebook.com/AAMObyAayushaShrestha/" target="_blank" ><img src="../img/socialmediaicon/facebookblack.png" onmouseover="this.src='../img/socialmediaicon/facebookgold.png'" onmouseout="this.src='../img/socialmediaicon/facebookblack.png'"></a></li>
-                <li><a href="https://www.instagram.com/aamo_nepal/?hl=en" target="_blank"><img src="../img/socialmediaicon/instablack.png" onmouseover="this.src='../img/socialmediaicon/instagold.png'" onmouseout="this.src='../img/socialmediaicon/instablack.png'"></a></li>
-         		<li><a id="contactButton" href="contact.php">CONTACT US</a></li>
+             <div id="footer">
+            <ul>
+                <!-- <li><a href="https://www.facebook.com/AAMObyAayushaShrestha/" target="_blank" ><img src="../img/socialmediaicon/facebookblack.png" onmouseover="this.src='../img/socialmediaicon/facebookgold.png'" onmouseout="this.src='../img/socialmediaicon/facebookblack.png'"></a></li>
+                <li><a href="https://www.instagram.com/aamo_nepal/?hl=en" target="_blank"><img src="../img/socialmediaicon/instablack.png" onmouseover="this.src='../img/socialmediaicon/instagold.png'" onmouseout="this.src='../img/socialmediaicon/instablack.png'"></a></li> -->
+                <li> AAMO by Aayusha Shrestha || Kathmandu, Nepal || +977-9849121844 </li>
+                <li><a href="https://www.facebook.com/AAMObyAayushaShrestha/" target="_blank">FACEBOOK</a></li>
+                <li><a href="https://www.instagram.com/aamo_nepal/?hl=en" target="_blank">INSTAGRAM</a></li>
+                <li><a id="contactButton" href="contact.php">EMAIL</a></li>
             </ul> 
-            </div>
+        </div>
         </section>
     </body>
 </html>
