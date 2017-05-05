@@ -1,9 +1,6 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <html lang="en-US">
-    <head>
+	<head>
         <meta charset="UTF-8">
         <title>AAMO</title>
         <link rel="stylesheet" type="text/css" href="../css/style2.css">
@@ -13,84 +10,34 @@ session_start();
         <section id="products">
             <!--nav-->
             <div id="navbar_left">
-                <a href="home.php"><img id="logo" src="../img/header/graphic.jpg" alt="logo"></a>
+                <a href="home.php"><img id="logo" src="../img/header/graphic.jpg"></a>
             </div>
             <div id="navbar_right">
                 <ul>
                     <li><a id="aboutButton" href="about.php">ABOUT</a></li>
                     <li><a id="productsButton" href="products.php">PRODUCTS</a></li>
-                    <li> <a onclick="document.getElementById('loginclick').style.display='block'">
-                    <?php
-                        if (isset($_SESSION['logged_user'])) {
-                            $logged_user = $_SESSION['logged_user'];
-                            echo "LOGOUT</a>";
-                            echo "<div id='loginclick' class='modal'>";
-                            echo "<div onclick='document.getElementById(\"loginclick\").style.display=\"none\"' class='close'>&times;</div>";
-                            //<!-- Modal Content -->
-                            echo "<form class='loginform' action='products.php' method='post'>";
-                                echo "<label><b>Logged in as $logged_user</b></label>";
-                                echo "<input type='submit' name='submitLogin' value='Logout'>";
-                            echo "</form>";                 
-                            echo "</div>"; 
-                        } 
-                        else {
-                            echo "LOGIN</a>";
-                            //<!-- The Modal -->
-                            echo "<div id='loginclick' class='modal'>";
-                            echo "<div onclick='document.getElementById(\"loginclick\").style.display=\"none\"' class='close'>&times;</div>";
-                            //<!-- Modal Content -->
-                            echo "<form class='loginform' action='products.php' method='post'>";
-                                echo "<label><b>Username</b></label>";
-                                echo "<input type='text' placeholder='Enter Username' name='username' required>";
-                                echo "<label><b>Password</b></label>";
-                                echo "<input type='password' placeholder='Enter Password' name='psw' required>";
-                                echo "<input type='submit' name='submitLogin' value='Login'>";
-                                echo "<span class='forgotpsw'><a href='#'> Forgot password?</a></span>";
-                            echo "</form>";                 
-                            echo "</div>"; 
-                        }
-                    
-                        require_once 'config.php';
-                        $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-
-                        if (isset($_POST['submitLogin'])) {
-                            if (isset($_SESSION['logged_user'])) {
-                                unset($_SESSION["logged_user"] );
-                                unset( $_SESSION );
-                                $_SESSION = array();
-                                session_destroy();
-                                header("Refresh:0");
-                            }
-                            else {
-                                $username = htmlentities($_POST['username']);
-                                $psw = htmlentities($_POST['psw']);
-
-                                $result = $mysqli->query("SELECT * from Users WHERE username = '$username'");
-                                $row = $result->fetch_assoc();
-                                $correctp = $row['password'];
-
-                                $valid_password = password_verify("$psw", $correctp);        
-
-                                if ($valid_password && $username === $row['username']) {
-                                    $_SESSION['logged_user'] = $username;
-                                    //"Successfully logged in as $username!"
-                
-                                } 
-                                else {
-                                    //"Log in failed!"
-                                }   
-                                header("Refresh:0");
-                            }
-                        }
-                    ?>      
+                    <li> <a onclick="document.getElementById('loginclick').style.display='block'">LOGIN</a>
+                        <!-- The Modal -->
+                        <div id="loginclick" class="modal">
+                        <div onclick="document.getElementById('loginclick').style.display='none'" class="close">&times;</div>
+                        <!-- Modal Content -->
+                            <form class="loginform" action="login.php">
+                                <label><b>Username</b></label>
+                                <input type="text" placeholder="Enter Username" name="username" required>
+                                <label><b>Password</b></label>
+                                <input type="password" placeholder="Enter Password" name="psw" required>
+                                <button type="submit">Login</button>
+                                <span class="forgotpsw"><a href="#"> Forgot password?</a></span>
+                            </form>
+                        </div> 
                         <script>
                             var modal = document.getElementById('loginclick');
                             window.onclick = function(event) {
                                 if (event.target == modal) {
-                               modal.style.display = "none";
+        	                   modal.style.display = "none";
                                 }
                             }
-                      </script></li>
+		              </script></li>
                     <li><a href="fav.php">FAV</li>
                 </ul>
             </div>
@@ -128,10 +75,12 @@ session_start();
             </div>
             
             <div class="gallery">
-            <ul class="item_list">
-                <li><a href="#" class="item_image"><img src="../img/products/example1.jpg" alt="Together Necklace"/><!--Image Source: Aayusha Shrestha--><div class="cover"><p>Together Necklace</p><p>Material: Brass- 22kt double Gold plated</p></div></a></li>
-                <li><a href="#" class="item_image"><img src="../img/products/example2.jpg" alt="Barsha Necklace"/><!--Image Source: Aayusha Shrestha--><div class="cover"><p>Barsha Necklace</p><p>Material: Brass- 22kt double Gold plated</p></div></a></li>
-            </ul>
+            <a href="#" class="item_image"><img src="../img/products/example1.jpg" alt="Together Necklace"/><!--Image Source: Aayusha Shrestha--><div class="cover"><p>Together Necklace</p><p>Material: Brass- 22kt double Gold plated</p></div></a>
+            
+            <a href="#" class="item_image"><img src="../img/products/example2.jpg" alt="Barsha Necklace"/><!--Image Source: Aayusha Shrestha--><div class="cover"><p>Barsha Necklace</p><p>Material: Brass- 22kt double Gold plated</p></div></a>
+            
+
+            <a href="#" class="item_image"><img src="../img/products/product3.jpg" alt="Barsha Necklace"/><!--Image Source: Aayusha Shrestha--><div class="cover"><p>Barsha Necklace</p><p>Material: Brass- 22kt double Gold plated</p></div></a>
             </div>
 
             </div>

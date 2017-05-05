@@ -8,6 +8,7 @@ html, body{
     padding: 0;
     height: 100%;
     width: 100%;
+    overflow-x:hidden;
 }
 
 /*--home--*/
@@ -185,38 +186,27 @@ html, body{
 
 /*----------------Products Gallery----------------*/
 .gallery {
-    margin-left: 20%;
+    margin-left: 30%;
     margin-top: 170px;
-
-}
-.item_list {
-  list-style: none;
-}
-
-.item_list li {
-  display: block;
-  text-align: center;
-  width:40%;
-  margin-left: auto;
-  margin-right:auto;
-  margin-bottom: 3px;
-  margin-top: 3px;
-  padding:3px;
-  border:3px solid #021a40;
+    display: grid;
+    grid-template-columns: 250px 250px  250px;
+    padding:3px;
+  
 }
 
-.item_list a {
+.gallery a {
   text-decoration: none;
 }
 
-.item_list .item_image{
+.gallery .item_image{
   display: block;
   position: relative;
 }
 
-.item_image img {
+.gallery img {
   width: 100%;
   height: auto;
+    border:3px solid white;
 }
 
 .cover {
@@ -229,15 +219,16 @@ html, body{
 
 }
 
-.item_list a:hover .cover {
+.gallery a:hover .cover {
   background-color: rgba(0,0,0,.8);
   color: rgba(255,255,255,1);
   transition: all .25s linear;
 }
 
-.item_list p {
+.gallery p {
   font-size: 1em;
   margin:0;
+  margin-left:10px;
   padding: 0;
 }
 
@@ -293,7 +284,7 @@ html, body{
 }
 #footer img{
     width: 60%;
-    height 70%;
+    height: 70%;
     display: inline-block;
 }
 
