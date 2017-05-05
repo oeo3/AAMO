@@ -3,7 +3,7 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en-US">
-	<head>
+    <head>
         <meta charset="UTF-8">
         <title>AAMO</title>
         <link rel="stylesheet" type="text/css" href="../css/style.css">
@@ -12,7 +12,7 @@ session_start();
     <body>
     <section id="home">
 
-    	<div id="homeSlide">
+        <div id="homeSlide">
             <div id='scroll_home'>
                 <script type="text/javascript">
                         $(function(){
@@ -27,8 +27,8 @@ session_start();
             </div>
         </div>
 
-    	    <script type="text/javascript">
-    	       $(window).load(function() {           
+            <script type="text/javascript">
+               $(window).load(function() {           
                 var i =0; 
                 var images = ['../img/home_slideshow/cuffs.jpg','../img/home_slideshow/workman.jpg'];
                 var image = $('#homeSlide');
@@ -41,7 +41,7 @@ session_start();
                 if(i == images.length)
                     i = 0;
                     }, 5000);            
-    	        });
+                });
             </script>
 
 
@@ -54,25 +54,49 @@ session_start();
             <ul>
                 <li><a id="aboutButton" href="about.php">ABOUT</a></li>
                 <li><a id="productsButton" href="products.php">PRODUCTS</a></li>
-                <li> <a onclick="document.getElementById('loginclick').style.display='block'">LOGIN</a>
-                    <!-- The Modal -->
-                    <div id="loginclick" class="modal">
-                    <div onclick="document.getElementById('loginclick').style.display='none'" class="close">&times;</div>
-                    <!-- Modal Content -->
-                        <form class="loginform" action="login.php" method="post">
-                            <label><b>Username</b></label>
-                            <input type="text" placeholder="Enter Username" name="username" required>
-                            <label><b>Password</b></label>
-                            <input type="password" placeholder="Enter Password" name="psw" required>
-                            <input type="submit" name="submitLogin" value="Login">
-                            <span class="forgotpsw"><a href="#"> Forgot password?</a></span>
-                        </form>
+                <li> <a onclick="document.getElementById('loginclick').style.display='block'">
+                    <?php
+                        if (isset($_SESSION['logged_user'])) {
+                            $logged_user = $_SESSION['logged_user'];
+                            echo "LOGOUT</a>";
+                            echo "<div id='loginclick' class='modal'>";
+                            echo "<div onclick='document.getElementById(\"loginclick\").style.display=\"none\"' class='close'>&times;</div>";
+                            //<!-- Modal Content -->
+                            echo "<form class='loginform' action='home.php' method='post'>";
+                                echo "<label><b>Logged in as $logged_user</b></label>";
+                                echo "<input type='submit' name='submitLogin' value='Logout'>";
+                            echo "</form>";                 
+                            echo "</div>"; 
+                        } 
+                        else {
+                            echo "LOGIN</a>";
+                            //<!-- The Modal -->
+                            echo "<div id='loginclick' class='modal'>";
+                            echo "<div onclick='document.getElementById(\"loginclick\").style.display=\"none\"' class='close'>&times;</div>";
+                            //<!-- Modal Content -->
+                            echo "<form class='loginform' action='home.php' method='post'>";
+                                echo "<label><b>Username</b></label>";
+                                echo "<input type='text' placeholder='Enter Username' name='username' required>";
+                                echo "<label><b>Password</b></label>";
+                                echo "<input type='password' placeholder='Enter Password' name='psw' required>";
+                                echo "<input type='submit' name='submitLogin' value='Login'>";
+                                echo "<span class='forgotpsw'><a href='#'> Forgot password?</a></span>";
+                            echo "</form>";                 
+                            echo "</div>"; 
+                        }
+                    
+                        require_once 'config.php';
+                        $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
-                        <?php
-                            require_once 'config.php';
-                            $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-
-                            if (isset($_POST['submitLogin'])) {
+                        if (isset($_POST['submitLogin'])) {
+                            if (isset($_SESSION['logged_user'])) {
+                                unset($_SESSION["logged_user"] );
+                                unset( $_SESSION );
+                                $_SESSION = array();
+                                session_destroy();
+                                header("Refresh:0");
+                            }
+                            else {
                                 $username = htmlentities($_POST['username']);
                                 $psw = htmlentities($_POST['psw']);
 
@@ -80,28 +104,29 @@ session_start();
                                 $row = $result->fetch_assoc();
                                 $correctp = $row['password'];
 
-                                $valid_password = password_verify("$password", $correctp);        
-                                echo "password_hash( 'mypassword', PASSWORD_DEFAULT)";
+                                $valid_password = password_verify("$psw", $correctp);        
 
                                 if ($valid_password && $username === $row['username']) {
                                     $_SESSION['logged_user'] = $username;
-                                    header("Refresh:0");
-                                    console.log("yay, logged in");
+                                    //"Successfully logged in as $username!"
+                
                                 } 
                                 else {
-                                    console.log("log in failed");
+                                    //"Log in failed!"
                                 }   
+                                header("Refresh:0");
                             }
-                        ?>
-                    </div>
+                        }
+                    ?>     
+
                     <script>
-		                var modal = document.getElementById('loginclick');
-		                window.onclick = function(event) {
-    	                   if (event.target == modal) {
-        	                   modal.style.display = "none";
-    	                   }
-		                }
-		            </script>
+                        var modal = document.getElementById('loginclick');
+                        window.onclick = function(event) {
+                           if (event.target == modal) {
+                               modal.style.display = "none";
+                           }
+                        }
+                    </script>
 
                     </li>
 
@@ -113,7 +138,7 @@ session_start();
 
 
         <div id="homecontent">
-    	    <div id="home_left">
+            <div id="home_left">
                 <ul>
                     <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
                     <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
@@ -137,18 +162,18 @@ session_start();
                                 });
                             });
                         </script>
-                    	<a href="#homeSlide"><span></span></a>
+                        <a href="#homeSlide"><span></span></a>
         </div>  
         </div>
 
         <div id="footer">
-          	<ul>
+            <ul>
                 <!-- <li><a href="https://www.facebook.com/AAMObyAayushaShrestha/" target="_blank" ><img src="../img/socialmediaicon/facebookblack.png" onmouseover="this.src='../img/socialmediaicon/facebookgold.png'" onmouseout="this.src='../img/socialmediaicon/facebookblack.png'"></a></li>
                 <li><a href="https://www.instagram.com/aamo_nepal/?hl=en" target="_blank"><img src="../img/socialmediaicon/instablack.png" onmouseover="this.src='../img/socialmediaicon/instagold.png'" onmouseout="this.src='../img/socialmediaicon/instablack.png'"></a></li> -->
                 <li> AAMO by Aayusha Shrestha || Kathmandu, Nepal || +977-9849121844 </li>
                 <li><a href="https://www.facebook.com/AAMObyAayushaShrestha/" target="_blank">FACEBOOK</a></li>
                 <li><a href="https://www.instagram.com/aamo_nepal/?hl=en" target="_blank">INSTAGRAM</a></li>
-         		<li><a id="contactButton" href="contact.php">EMAIL</a></li>
+                <li><a id="contactButton" href="contact.php">EMAIL</a></li>
             </ul> 
         </div>
     </section>

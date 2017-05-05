@@ -10,10 +10,9 @@
             <div class="inner">
                 <div class="intro_content">
                     <a class="enter_button" href="pages/home.php">Shop Now</a>
-                   <div id="welcome_socialmedia">
-                        <a href="https://www.instagram.com/aamo_nepal/?hl=en" target="_blank"><img class="instagram" src="img/socialmediaicon/insta.png"></a>
-                        <a href="https://www.facebook.com/AAMObyAayushaShrestha/" target="_blank" ><img class="facebook" src="img/socialmediaicon/face.png"></a>
-                    </div>
+                    <div id="welcome_socialmedia">
+                        <a href="https://www.instagram.com/aamo_nepal/?hl=en" target="_blank"><img class="instagram" src="img/socialmediaicon/insta.png" alt="insta"></a>
+                        <a href="https://www.facebook.com/AAMObyAayushaShrestha/" target="_blank" ><img class="facebook" src="img/socialmediaicon/face.png" alt="face"></a>
                     </div>
                     <h1>ETHICAL. CONCEPTUAL. SUSTAINABLE. HANDCRAFTED.</h1>
                 </div>
