@@ -10,42 +10,7 @@ session_start();
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 </head>
 <body>
-	<section id="home">
-
-		<div id="homeSlide">
-			<div id='scroll_home'>
-				<script type="text/javascript">
-					$(function(){
-						$('a[href*=#homecontent]').on('click', function(e) {
-							e.preventDefault();
-							$('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 800, 'linear');
-							$('#scroll_home').hide();
-						});
-					});
-				</script>
-				<a href="#homecontent"><span></span></a>
-			</div>
-		</div>
-
-		<script type="text/javascript">
-			$(window).load(function() {           
-				var i =0; 
-				var images = ['../img/home_slideshow/cuffs.jpg','../img/home_slideshow/workman.jpg'];
-				var image = $('#homeSlide');
-				setInterval(function(){         
-					image.fadeOut(1000, function () {
-						image.css('background', 'url(' + images [i++] +') no-repeat 50% 70%' );
-						image.css('background-size', 'cover');
-						image.fadeIn(1000);
-					});
-					if(i == images.length) {
-						i = 0;
-					}
-				}, 5000);            
-			});
-		</script>
-
-
+	<section id="homereset">
 		<div id="navbar_container">
 			<div id="navbar_left">
 				<a href="home.php"><img id="logo" src="../img/header/graphic.jpg"></a>
@@ -89,7 +54,6 @@ session_start();
 
 							echo "</div>"; 
 						}
-
 
 						require 'config.php';
 						$mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
@@ -336,42 +300,46 @@ session_start();
 							</form>
 						</div>
 					</li>
-					<li><a href="fav.php">FAV</li>
-					<li><a href="reset.php?username=nora&action=reset">reset</li>
 				</ul> 
 
 			</div>
 		</div>
 
+		<div id="reset">
+			<form class="resetform" action="reset.php" method="post">
+				<label><b> New Password</b></label><br/>
+				<input type='password' placeholder='Enter New Password' name='resetPass' required><br/>
+				<label><b> Confirm Password</b></label><br/>
+				<input type='password' placeholder='Enter Password Again' name='confirmPass' required><br/>
+				<button type='submit' class='resetNow'>RESET PASSWORD</button>   
+			</form>
 
-		<div id="homecontent">
-			<div id="home_left">
-				<ul>
-					<li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
-					<li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
-					<li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
-					<li><a id="cat_jewel" href="products.php"> JEWELERY</a></li>
-					<li><a id="cat_wood" href="products.php">WOOD WORK</a></li>
-					<li><a id="cat_textiles" href="products.php">TEXTILES</a></li>
-				</ul>
-			</div>
-			<div id="home_right">
-				<!--Pseudocode to display google calendar: -->
-				<iframe src="https://calendar.google.com/calendar/embed?src=oeo3%40cornell.edu&ctz=America/New_York" style="border: 0" frameborder="0" scrolling="no"></iframe>
+			
+		</div>	
 
-				<!--scroll arrow-->
-				<script type="text/javascript">
-					$(function(){
-						$('a[href*=#homeSlide]').on('click', function(e) {
-							e.preventDefault();
-							$('html, body').animate({ scrollTop: $($(this).attr('href')).offset().left}, 1000);
-							$('#scroll_home').show();
-						});
-					});
-				</script>
-				<a href="#homeSlide"><span></span></a>
-			</div>  
-		</div>
+		<?php
+		require_once 'config.php';
+		$mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+
+		if ($mysqli->errno) {
+			print($mysqli->error);
+			exit();
+		}
+
+		if (isset($_POST['resetNow'])) {
+			$password = $_POST["resetPass"];
+			$confirmpassword = $_POST["confirmPass"];
+			if ($password==$confirmpassword) {
+				$username=$_GET['username'];
+				$password = hash('sha256', $password);
+				$mysqli->query("UPDATE users SET password=$password WHERE username=$username");
+				echo 'Your password has been successfully changed.';
+
+			} else {
+				echo 'Passwords do not match.';
+			}
+		}
+		?>
 
 		<div id="footer">
 			<ul>
@@ -383,6 +351,8 @@ session_start();
                 <li><a id="contactButton" href="contact.php">EMAIL</a></li>
             </ul> 
         </div>
+
+
     </section>
 </body>
 </html>

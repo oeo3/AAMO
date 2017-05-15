@@ -85,7 +85,7 @@ html, body{
 }
 
 .facebook:hover{
-     border: solid #000 3px;
+   border: solid #000 3px;
 }
 .instagram{
     border: solid #dfc12a 3px;
@@ -94,7 +94,7 @@ html, body{
 }
 
 .instagram:hover{
-     border: solid #000 3px;
+   border: solid #000 3px;
 }
 
 @media screen and (max-width:768px){
@@ -269,16 +269,16 @@ html, body{
 /*--Scroll Arrows on Home Page--*/
 #scroll_home a{
     position: absolute;
-	bottom: 32px;
-	left: 48%;
-	z-index: 2;
-	display: inline-block;
-	transform: translate(0, -10%);
-	color: #fff;
-	font : normal 400 20px/1 'Century Gothic', sans-serif;
-	letter-spacing: .1em;
-	text-decoration: none;
-	transition: opacity .3s;
+    bottom: 32px;
+    left: 48%;
+    z-index: 2;
+    display: inline-block;
+    transform: translate(0, -10%);
+    color: #fff;
+    font : normal 400 20px/1 'Century Gothic', sans-serif;
+    letter-spacing: .1em;
+    text-decoration: none;
+    transition: opacity .3s;
 }
 
 #scroll_home a:hover {
@@ -288,16 +288,16 @@ html, body{
 
 #home_right a{
     position: absolute;
-	bottom: 1px;
-	left: 48%;
-	z-index: 2;
-	display: inline-block;
-	transform: translate(0, -10%);
-	color: #fff;
-	font : normal 400 20px/1 'Century Gothic', sans-serif;
-	letter-spacing: .1em;
-	text-decoration: none;
-	transition: opacity .3s;
+    bottom: 1px;
+    left: 48%;
+    z-index: 2;
+    display: inline-block;
+    transform: translate(0, -10%);
+    color: #fff;
+    font : normal 400 20px/1 'Century Gothic', sans-serif;
+    letter-spacing: .1em;
+    text-decoration: none;
+    transition: opacity .3s;
 }
 
 #home_right a:hover {
@@ -314,10 +314,10 @@ html, body{
 	width: 46px;
 	height: 46px;
     bottom:32px;
-	margin-left: -23px;
-	border: 1px solid #fff;
-	border-radius: 100%;
-	box-sizing: border-box;
+    margin-left: -23px;
+    border: 1px solid #fff;
+    border-radius: 100%;
+    box-sizing: border-box;
 }
 #scroll_home a span::after {
 	position: absolute;
@@ -345,10 +345,10 @@ html, body{
 	width: 46px;
 	height: 46px;
     bottom: 32px;
-	margin-left: -23px;
-	border: 1px solid #fff;
-	border-radius: 100%;
-	box-sizing: border-box;
+    margin-left: -23px;
+    border: 1px solid #fff;
+    border-radius: 100%;
+    box-sizing: border-box;
 }
 #home_right a span::after {
 	position: absolute;
@@ -420,12 +420,12 @@ html, body{
 /*--Scroll Arrows on About Page--*/
 #about-content a{
     position: absolute;
-	bottom: 32px;
-	left: 35.25%;
-	z-index: 2;
-	transform: translate(0, -10%);
-	text-decoration: none;
-	transition: opacity .3s;
+    bottom: 32px;
+    left: 35.25%;
+    z-index: 2;
+    transform: translate(0, -10%);
+    text-decoration: none;
+    transition: opacity .3s;
 }
 
 #about-content a:hover {
@@ -779,6 +779,39 @@ input[type=text], input[type=password] {
     margin-left: 20px;
 }
 
+.modal3 {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 35%;
+    top: 80px;
+    width: 30%; 
+    height: 25%; 
+    background:rgba(255,255,255,0.6);
+    padding-top: 20px;
+    border: solid #dfc12a 4px;
+    margin: 0 auto;
+}
+
+.modal3 button {
+    background-color: #dfc12a;
+    color: black;
+    font-weight:bold;
+    font-size: 15px;
+    padding: 14px 10px;
+    margin: 8px 0;
+    margin-left: 2px;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+    font-family: Oswald, sans-serif;
+}
+
+#forgotpass label {
+    float:left;
+    margin-left: 20px;
+}
+
 /* close Button */
 .close {
     position: absolute;
@@ -802,3 +835,45 @@ input[type=text], input[type=password] {
     font-size:15px;
 }
 
+/*reset page*/
+#reset {
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 35%;
+    top: 80px;
+    width: 30%; 
+    height: 35%; 
+    background:rgba(255,255,255,0.6);
+    padding-top: 20px;
+    border: solid #dfc12a 4px;
+    margin: 0 auto;
+}
+
+#reset button {
+    background-color: #dfc12a;
+    color: black;
+    font-weight:bold;
+    font-size: 15px;
+    padding: 14px 10px;
+    margin: 8px 0;
+    margin-left: 20px;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+    font-family: Oswald, sans-serif;
+}
+#reset input {
+    margin-left:20px;
+    font-family: Oswald, sans-serif;
+}
+
+#reset label {
+    float:left;
+    margin-left: 20px;
+    color:black;
+    font-family: Oswald, sans-serif;
+}
+
+#homereset {
+    height:50vh;
+}
