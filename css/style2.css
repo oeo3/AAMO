@@ -118,7 +118,7 @@ html, body{
 #product_menu{
     background: white;
     width: 250px;
-    margin: 50px auto 0px 40px;
+    margin: 100px auto 0px 40px;
     position: fixed;
     box-shadow: 0 5px 15px 1px rgba(0, 0, 0, 0.6), 0 0 200px 1px rgba(255, 255, 255, 0.5);
 }
@@ -187,7 +187,7 @@ html, body{
 /*----------------Products Gallery----------------*/
 .gallery {
     margin-left: 30%;
-    margin-top: 170px;
+    margin-top: 110px;
     display: grid;
     grid-template-columns: 250px 250px  250px;
     padding: 3px;

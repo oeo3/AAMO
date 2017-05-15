@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en-US">
 	<head>
@@ -7,6 +10,13 @@
         <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     </head>
     <body>
+        <?php
+            require_once 'config.php'; 
+            $mysqli = new mysqli( DB_HOST, DB_USER, DB_PASSWORD, DB_NAME );
+            if($mysqli -> connect_error){
+	           die("Connection failed: " . $mysqli->connect_error);
+            }
+        ?>
         <section id="products">
             <!--nav-->
             <div id="navbar_left">
@@ -55,12 +65,23 @@
                         
                         $("#product_menu ul ul li a").click(function(){
                             //slide up all the link lists
-                            $("#product_menu ul ul ul").slideUp();
+                            //$("#product_menu ul ul ul").slideUp();
                             //slide down the link list below h1 clicked - only if closed
                             if(!$(this).next().is(":visible")){
                                $(this).next().slideDown();
                             }
                         });
+                        
+                        $("#product_menu ul ul ul li a").click(function(){
+                            //slide up all the link lists
+                            //$("#product_menu ul ul ul").slideUp();
+                            //slide down the link list below h1 clicked - only if closed
+                            if($(this).next().is("visible")){
+                               $(this).next().slideUp();
+                            }
+                        });
+                        
+                        
                     });
                 </script>
             <div id="product_menu">
@@ -78,7 +99,9 @@
                         <ul>
                             <li><a href="#">Series</a>
                                 <ul>
-                                    <li><a href="#">Series 1</a></li>
+                                    <li><a href="#">Garima</a></li>
+                                    <li><a href="#">Lo</a></li>
+                                    <li><a href="#">Shakti</a></li>
                                 </ul>
                             </li>
                             <li><a href="#">Material</a>
@@ -92,12 +115,24 @@
             </div>
             
             <div class="gallery">
-            <a href="#" class="item_image"><img src="../img/products/example1.jpg" alt="Together Necklace"/><!--Image Source: Aayusha Shrestha--><div class="cover"><p>Together Necklace</p><p>Material: Brass- 22kt double Gold plated</p></div></a>
-            
-            <a href="#" class="item_image"><img src="../img/products/example2.jpg" alt="Barsha Necklace"/><!--Image Source: Aayusha Shrestha--><div class="cover"><p>Barsha Necklace</p><p>Material: Brass- 22kt double Gold plated</p></div></a>
-            
-
-            <a href="#" class="item_image"><img src="../img/products/product3.jpg" alt="Barsha Necklace"/><!--Image Source: Aayusha Shrestha--><div class="cover"><p>Barsha Necklace</p><p>Material: Brass- 22kt double Gold plated</p></div></a>
+            <?php    
+                //Get the data    
+                $result = $mysqli->query('SELECT * FROM Products');
+                while ( $row = $result->fetch_assoc()){
+                    $imgpath=$row['filePath'];
+                    $imgname=$row['name'];
+                    $imgmaterial=$row['material'];
+                    
+                    //Show Image and URL path to view more info
+                    print ("<a href='#' class='item_image'><img src='../$imgpath' alt='$imgname'/><div class='cover'><p>$imgname</p><p>$imgmaterial</p></div></a>");
+                }
+                
+                //counting number of page 
+                //$resultcount = $mysqli->query('SELECT * FROM Products');
+                //$count = $mysqli_num_rows($resultcount);
+                
+            ?>
+                
             </div>
 
             </div>
