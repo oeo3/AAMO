@@ -52,6 +52,15 @@
                                $(this).next().slideDown();
                             }
                         });
+                        
+                        $("#product_menu ul ul li a").click(function(){
+                            //slide up all the link lists
+                            $("#product_menu ul ul ul").slideUp();
+                            //slide down the link list below h1 clicked - only if closed
+                            if(!$(this).next().is(":visible")){
+                               $(this).next().slideDown();
+                            }
+                        });
                     });
                 </script>
             <div id="product_menu">
@@ -67,8 +76,16 @@
                     <li>
                         <h1>Filters</h1>
                         <ul>
-                            <li><a href="#">Series</a></li>
-                            <li><a href="#">Material</a></li>
+                            <li><a href="#">Series</a>
+                                <ul>
+                                    <li><a href="#">Series 1</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Material</a>
+                                <ul>
+                                    <li><a href="#">Brass</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
                 </ul>    
