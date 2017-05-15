@@ -692,35 +692,105 @@ html, body{
 }
 #footer img{
     width: 60%;
-    height 70%;
+    height: 70%;
     display: inline-block;
 }
 
 /*--login modal--*/
+input[type=text], input[type=password] {
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.modal button {
+    background-color: #dfc12a;
+    color: black;
+    font-weight:bold;
+    font-size: 15px;
+    padding: 14px 10px;
+    margin: 8px 0;
+    margin-left: 2px;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+    font-family: Oswald, sans-serif;
+}
+
 .modal {
     display: none; /* Hidden by default */
     position: fixed;
     z-index: 1; /* Sit on top */
-    left: 72.5%;
-    top: 10%;
-    width: 20%; /* Full width */
-    height: 25%; /* Full height */
-    background-color: #fefefe;
+    left: 35%;
+    top: 100px;
+    width: 30%; 
+    height: 45%; 
+    background:rgba(255,255,255,0.6);
     padding-top: 20px;
     border: solid #dfc12a 4px;
-    border-radius: 9px;
+    margin: 0 auto;
+}
+
+#loginclick a {
+    color: black;
+}
+#loginclick a:hover {
+    color: grey;
+}
+
+#loginclick label {
+    float:left;
+    margin-left: 20px;
+}
+
+.modal2 {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 35%;
+    top: 80px;
+    width: 30%; 
+    height: 70%; 
+    background:rgba(255,255,255,0.6);
+    padding-top: 20px;
+    border: solid #dfc12a 4px;
+    margin: 0 auto;
+}
+
+.modal2 button {
+    background-color: #dfc12a;
+    color: black;
+    font-weight:bold;
+    font-size: 15px;
+    padding: 14px 10px;
+    margin: 8px 0;
+    margin-left: 2px;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+    font-family: Oswald, sans-serif;
+}
+
+#signupclick label {
+    float:left;
+    margin-left: 20px;
 }
 
 /* close Button */
 .close {
     position: absolute;
-    right: 5px;
+    right: 20px;
     top:0;
     margin:0;
     padding:0;
     color: black;
     font-size: 35px;
     font-weight: bold;
+    text-align: inline-block;
+    width:10px;
 }
 
 .close:hover {

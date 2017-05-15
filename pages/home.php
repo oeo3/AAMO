@@ -56,6 +56,8 @@ session_start();
                 <li><a id="aboutButton" href="about.php">ABOUT</a></li>
                 <li><a id="productsButton" href="products.php">PRODUCTS</a></li>
                 <li> <a onclick="document.getElementById('loginclick').style.display='block'">
+
+
                     <?php
                         if (isset($_SESSION['logged_user'])) {
                             $logged_user = $_SESSION['logged_user'];
@@ -65,7 +67,7 @@ session_start();
                             //<!-- Modal Content -->
                             echo "<form class='loginform' action='home.php' method='post'>";
                                 echo "<label><b>Logged in as $logged_user</b></label>";
-                                echo "<input type='submit' name='submitLogin' value='Logout'>";
+                                echo "<button type='submit' class='loginbtn'>LOGOUT</button>";
                             echo "</form>";                 
                             echo "</div>"; 
                         } 
@@ -76,20 +78,23 @@ session_start();
                             echo "<div onclick='document.getElementById(\"loginclick\").style.display=\"none\"' class='close'>&times;</div>";
                             //<!-- Modal Content -->
                             echo "<form class='loginform' action='home.php' method='post'>";
-                                echo "<label><b>Username</b></label>";
-                                echo "<input type='text' placeholder='Enter Username' name='username' required>";
-                                echo "<label><b>Password</b></label>";
-                                echo "<input type='password' placeholder='Enter Password' name='psw' required>";
-                                echo "<input type='submit' name='submitLogin' value='Login'>";
-                                echo "<span class='forgotpsw'><a href='#'> Forgot password?</a></span>";
-                            echo "</form>";                 
+                                echo "<label><b>Username</b></label><br/>";
+                                echo "<input type='text' placeholder='Enter Username' name='username' required><br/>";
+                                echo "<label><b>Password</b></label><br/>";
+                                echo "<input type='password' placeholder='Enter Password' name='psw' required><br/>";
+                                echo "<button type='submit' class='loginbtn'>LOGIN</button>";
+                                echo "</form>"; 
+                                echo "<span class='forgotpsw'><a href='#'> Forgot password?</a></span><br/>";
+                                echo "<a href='#' type='submit' class='signupbtn' onclick='document.getElementById(\"signupclick\").style.display=\"block\"; document.getElementById(\"loginclick\").style.display=\"none\"'>Don't have an account? SIGN UP!</button><br/>";  
+                                         
                             echo "</div>"; 
                         }
+
                     
                         require_once 'config.php';
                         $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
-                        if (isset($_POST['submitLogin'])) {
+                        if (isset($_POST['loginbtn'])) {
                             if (isset($_SESSION['logged_user'])) {
                                 unset($_SESSION["logged_user"] );
                                 unset( $_SESSION );
@@ -119,7 +124,7 @@ session_start();
                             }
                         }
                     ?>     
-
+  
                     <script>
                         var modal = document.getElementById('loginclick');
                         window.onclick = function(event) {
@@ -127,12 +132,36 @@ session_start();
                                modal.style.display = "none";
                            }
                         }
+
+                        var modal2 = document.getElementById('signupclick');
+                        window.onclick = function(event) {
+                           if (event.target == modal2) {
+                               modal2.style.display = "none";
+                           }
+                        }
                     </script>
+                	<div id='signupclick' class='modal2'></a>
+                            <div onclick='document.getElementById("signupclick").style.display="none"' class='close'>&times;</div>
+                            <!-- Modal Content -->
+                            <form class='signupform' action='home.php' method='post'>
+                            	<label><b>Name</b></label><br/>
+                                <input type='text' placeholder='Enter Name' name='signupname' required><br/>
+                                <label><b>Username</b></label><br/>
+                                <input type='text' placeholder='Enter Username' name='signupusername' required><br/>
+                                <label><b>Email</b></label><br/>
+                                <input type='text' placeholder='Enter Email' name='signupuemail' required><br/>
+                                <label><b>Password</b></label><br/>
+                                <input type='password' placeholder='Enter Password' name='signuppsw' required><br/>
+                                <label><b>Repeat Password</b></label><br/>
+    							<input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+                                <button type='submit' class='signup'>SIGN UP</button>   
+                            </form>                 
+                    </div> 
 
                     </li>
 
                     <li><a href="fav.php">FAV</li>
-                </ul>
+                </ul> 
  
         </div>
     </div>
