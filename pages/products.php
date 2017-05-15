@@ -1,6 +1,3 @@
-<?php
-    session_start();
-?>
 <!DOCTYPE html>
 <html lang="en-US">
 	<head>
@@ -81,37 +78,51 @@
                             }
                         });
                         
-                        
                     });
                 </script>
             <div id="product_menu">
                 <ul>
                     <li class="active">
                         <h1>Categories</h1>
-                        <ul>
+                        <ul class="category_items">
                             <li><a href="#">Jewelry</a></li>
                             <li><a href="#">Woodwork</a></li>
                             <li><a href="#">Textile</a></li>
+                                <!--add categories-->
+                                    <div class="input-group col-lg-4 col-sm-12 col-xs-12 mb-3 mb-sm-3">
+				                        <input type="text" class="form-control add-series" id="categoryInput" placeholder="Category">
+				                        <button type="button" id="add-category" class="btn btn-primary">Add</button>
+                                    </div>    
                         </ul>
                     </li>
                     <li>
                         <h1>Filters</h1>
                         <ul>
                             <li><a href="#">Series</a>
-                                <ul>
+                                <ul id="series-select">
                                     <li><a href="#">Garima</a></li>
                                     <li><a href="#">Lo</a></li>
                                     <li><a href="#">Shakti</a></li>
+                                    <!--add series-->
+                                        <div class="input-group col-lg-4 col-sm-12 col-xs-12 mb-3 mb-sm-3">
+				                            <input type="text" class="form-control add-series" id="seriesInput" placeholder="Series">
+				                            <button type="button" id="add-series" class="btn btn-primary">Add</button>
+                                        </div>
                                 </ul>
                             </li>
                             <li><a href="#">Material</a>
                                 <ul>
                                     <li><a href="#">Brass</a></li>
+                                    <!--add material-->
+                                        <div class="input-group col-lg-4 col-sm-12 col-xs-12 mb-3 mb-sm-3">
+				                            <input type="text" class="form-control add-material" id="materialInput" placeholder="Material">
+				                            <button type="button" id="add-series" class="btn btn-primary">Add</button>
+                                        </div>
                                 </ul>
                             </li>
                         </ul>
                     </li>
-                </ul>    
+                </ul> 
             </div>
             
             <div class="gallery">
@@ -127,9 +138,7 @@
                     print ("<a href='#' class='item_image'><img src='../$imgpath' alt='$imgname'/><div class='cover'><p>$imgname</p><p>$imgmaterial</p></div></a>");
                 }
                 
-                //counting number of page 
-                //$resultcount = $mysqli->query('SELECT * FROM Products');
-                //$count = $mysqli_num_rows($resultcount);
+                //Get Filtered data
                 
             ?>
                 
