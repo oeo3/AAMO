@@ -141,6 +141,11 @@
             </div>   
                 
             <div class="gallery">
+                <div id="addproduct">
+                <?php
+                    include ('addproducts.php');
+                ?>
+                </div>
             <?php
                 
                 
