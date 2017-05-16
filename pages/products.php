@@ -125,10 +125,36 @@
                 </ul> 
             </div>
             
+            <div id="pagination">
+            <?php   
+                //Pagination
+                $pagination = $mysqli->query('SELECT * FROM Products');
+                $count = mysqli_num_rows($pagination);//use to count how many images in database
+                $a=$count/6;
+                $a=ceil($a);
+                
+                for($b=1;$b<=$a;$b++){
+                    ?><a href="products.php?page=<?php echo $b; ?>"><?php echo $b.""; ?></a> <?php
+                }
+                
+            ?>
+            </div>   
+                
             <div class="gallery">
-            <?php    
+            <?php
+                
+                
+                    $page=$_GET['page'];
+                
+                    if($page == "" || $page == "1"){
+                    $page1=0;
+                    }else{
+                        $page1=($b-6)*6;
+                    }
+                
+                
                 //Get the data    
-                $result = $mysqli->query('SELECT * FROM Products');
+                $result = $mysqli->query('SELECT * FROM Products LIMIT 0,6');
                 while ( $row = $result->fetch_assoc()){
                     $imgpath=$row['filePath'];
                     $imgname=$row['name'];
@@ -140,8 +166,7 @@
                 
                 //Get Filtered data
                 
-            ?>
-                
+            ?>  
             </div>
 
             </div>
