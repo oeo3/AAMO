@@ -336,7 +336,7 @@ session_start();
 							</form>
 						</div>
 					</li>
-					<li><a href="fav.php">FAV</li>
+					<li><a href="favorites.php">FAV</li>
 					<li><a href="reset.php?username=nora&action=reset">reset</li>
 				</ul> 
 
